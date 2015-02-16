@@ -1,6 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
 *{
 	margin: 0 auto;
+}
+
+body{
+	background: #742969;
+	color:#FFFFFF;
+	font-size: 12px;
 }
 .me-header{
 	background-image: url('../img/2.jpg') !important;
@@ -17,6 +25,9 @@
 }
 
 .me-right, .me-left{
-	background: #ffeecc;
+	margin: 100px 0 100px 0;
+	text-align: center;
+	font-family: Raleway;
 }
+
 

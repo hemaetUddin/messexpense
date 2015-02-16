@@ -7,30 +7,17 @@
 	<link rel="stylesheet" href="css/me-custom.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.css">
 	<script src="js/jquery.js"></script>
+	<script src="js/custom.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+	
 	<script>
-	$(document).ready(function(){
-		if($('#meBTN').click(function(){
-			var mmName = $('#mmName').val();
-			var meDate = $('#meDate').val();
-			var mepName = $('#mepName').val();
-			var mepPrice = $('#mepPrice').val();
-			var meSubmit =$('#meBTN').val();
-			// alert(mmName + meDate + mepName + mepPrice);
-
-			$.post('classes/valuesInsert.php',{
-				mmName:mmName,
-				meDate:meDate,
-				mepName:mepName,
-				mepPrice:mepPrice,
-				meSubmit:meSubmit
-			},
-			function(result){
-				alert(mepPrice);
-				alert(result);
-
-			})
-		}));
-		
+	$(function() {
+	$( "#datepicker" ).datepicker();
+	$( "#anim" ).change(function() {
+	$( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+	});
 	});
 	</script>
 </head>
@@ -49,11 +36,19 @@
 			<div class="col-sm-3">
 				<div class="me-left">
 					<h1>this is left side</h1>
+					<ul class="me-menu">
+						<li>menu 1</li>
+						<li>menu 2</li>
+						<li>menu 3</li>
+						<li>menu 4</li>
+						<li>menu 5</li>
+						
+					</ul>
 				</div>
 			</div>
 			<div class="col-sm-9">
 				<div class="me-right">
-					<h1>this is right side</h1>
+					<h1>Cost Description Entry</h1>
 					<form action="" class="form-horizontal" method="post">
 						<div class="form-group">
 							<label for="name" class="control-label col-xs-2">Name</label>
@@ -64,7 +59,7 @@
 						<div class="form-group">
 							<label for="date" class="control-label col-xs-2">Date</label>
 							<div class="col-xs-10">
-								<input type="text" class="form-control" name="meDate" id="meDate">
+								<input type="text" class="form-control" name="datepicker" id="datepicker" size="30">
 							</div>
 						</div>
 						<div class="form-group">
