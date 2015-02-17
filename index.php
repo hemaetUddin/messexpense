@@ -14,9 +14,9 @@
 	
 	<script>
 	$(function() {
-	$( "#datepicker" ).datepicker();
+	$( "#meDate" ).datepicker();
 	$( "#anim" ).change(function() {
-	$( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+	$( "#meDate" ).datepicker( "option", "showAnim", $( this ).val() );
 	});
 	});
 	</script>
@@ -36,13 +36,13 @@
 			<div class="col-sm-3">
 				<div class="me-left">
 					<h1>this is left side</h1>
-					<ul class="me-menu">
-						<li>menu 1</li>
-						<li>menu 2</li>
-						<li>menu 3</li>
-						<li>menu 4</li>
-						<li>menu 5</li>
-						
+					<ul class="me-left-menu">
+						<li><a href="index.php">Home</a></li>
+						<li><a href="me_rinto.php">Rinto</a></li>
+						<li><a href="me_monirul.php">Monirul</a></li>
+						<li><a href="me_faruk.php">Faruk</a></li>
+						<li><a href="">menu 4</a></li>
+						<li><a href="">menu 5</a></li>
 					</ul>
 				</div>
 			</div>
@@ -59,7 +59,7 @@
 						<div class="form-group">
 							<label for="date" class="control-label col-xs-2">Date</label>
 							<div class="col-xs-10">
-								<input type="text" class="form-control" name="datepicker" id="datepicker" size="30">
+								<input type="text" class="form-control" name="meDate" id="meDate" size="30">
 							</div>
 						</div>
 						<div class="form-group">
