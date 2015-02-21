@@ -23,19 +23,15 @@ if(isset($_POST['meSubmit'])){
 // 	$
 // }
 
-	$selQ = "SELECT stot from total WHERE name = '$mmName'";
-	$ree = $db->query($selQ);
-
-	while(list($stot)=$ree->fetch_row()){
+	$selectQuery = "SELECT stot from total WHERE name = '$mmName'";
+	$result1 = $db->query($selectQuery);
+	while(list($stot)=$result1->fetch_row()){
 	 $expricetotal = $stot + $mepPrice;
-	 // echo $expricetotal. "\r\n";
-	 // $expricetotal2 =$expricetotal + $mepPrice;
-	 // echo $expricetotal2. "\r\n"; 
+	 
+	 $upQuquery = "UPDATE total SET stot=$expricetotal WHERE name= '$mmName'";
+	 $upResult =$db->query($upQuquery);  
 
-	$upQuquery = "UPDATE total SET stot=$expricetotal WHERE name= '$mmName'";
-	$r =$db->query($upQuquery);  
-
-	if($r){echo "Successful";}else{echo "wrong";};
+	if($upResult){echo "Successful";}else{echo "wrong";};
 		}
 
 
