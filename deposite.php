@@ -42,23 +42,95 @@ include'common/config.php';
 			</div>
 			<div class="col-sm-9">
 				<div class="me-right">
-					<h1>Cost Description Of Faruk</h1>
+					
 					<?php 
-						$myQuery = "select * from costkeeping where mmName='Faruk'";
-						$result = $db->query($myQuery);
-						echo "<table class='responsive' width='100%' border='1'><tr><th>ID</th><th>Name</th><th>Date</th><th>Product Name</th><th>Product price</th>";
-						while(list($id,$mmName,$meDate,$mepName,$mepPrice,$time)=$result->fetch_row()){
-							echo "<tr><td>".$id."</td><td>".$mmName."</td><td>".$meDate."</td><td>".$mepName."</td><td>".$mepPrice."</td>";
-						}
+						// $myQuery = "select * from costkeeping where mmName='Faruk'";
+						// $viewQuery = "CREATE VIEW me_deposite AS SELECT mmName, SUM(mepPrice) FROM costkeeping GROUP BY mmName";
+						// $result = $db->query($viewQuery);
+						// print_r($result); die();
+
+
+						// echo "<table class='responsive' width='100%' border='1'><tr><th>Name</th><th>Deposite</th><th>Expenses</th><th>Advance / Due</th>";
+						// while(list($mmName,$mepPrice)=$result->fetch_row()){
+						// 	echo "<tr><td>".$id."</td><td>".$mmName."</td><td>".$meDate."</td><td>".$mepName."</td>";
+						// }
 
 						// $toQuery = "SELECT mmName, SUM(mepPrice) FROM costkeeping GROUP BY mmName";
-						$sQuery ="SELECT SUM(mepPrice) FROM costkeeping where mmName = 'Faruk'";
-						$results = $db->query($sQuery);
-						while(list($total)=$results->fetch_row()){
-						echo"<tr><td colspan='4'>Total</td><td>". $total."</td></tr>";
+						
+						// $sQuery ="SELECT SUM(mepPrice) FROM costkeeping where mmName = 'Faruk'";
+						// $results = $db->query($sQuery);
+						// while(list($total)=$results->fetch_row()){
+						// echo"<tr><td colspan='3'>Total</td><td>". $total."</td></tr>";
+						
+						function perHeadCost(){
+							echo "<h1>Expense Perhead</h1>";
+							include'common/config.php';
+						$seQ= "select * from total";
+						$result = $db->query($seQ);
+						echo "<table class='responsive' width='100%' border='1'><tr><th>ID</th><th>Name</th><th>Deposite</th>";
+						while(list($id,$name,$stot)=$result->fetch_row()){
+							echo "<tr><td>".$id."</td><td>".$name."</td><td>".$stot."</td>";
+						}
+
+						$seQ= "select SUM(stot) from total";
+						$result = $db->query($seQ);
+						while(list($stot)=$result->fetch_row()){
+							// echo "<tr><td>".$id."</td><td>".$name."</td><td>".$stot."</td>";
+							echo"<tr><td colspan='2'>Total</td><td>". $stot."</td></tr>";
+							echo"<tr><td colspan='2'>Perhead Cost</td><td>". ($stot/3)."</td></tr>";
+						}
+						echo "</table>";
 					}
 
+					function deposite(){
+							echo "<h1>Depostie</h1>";
+							include'common/config.php';
+						
+						// $seQ= "SELECT name, SUM(stot), stot from total";
+						// $result = $db->query($seQ);
+						// echo "<table class='responsive' width='100%' border='1'><tr><th>Name</th><th>Deposite</th><th>Expense</th><th>Advance/Due</th>";
+						// while(list($name,$sumstot, $stot)=$result->fetch_row()){
+						// 	echo "<tr><td>".$name."</td><td>".$stot."</td><td>".($sumstot/3)."</td><td>".($stot-$sumstot/3)."<td>";
+						// }
+
+
+						$seQ= "SELECT SUM(stot) from total";
+						$result = $db->query($seQ);
+						while(list($sumstot)=$result->fetch_row()){
+							echo "<table class='responsive' width='100%' border='1'><tr><th>Name</th><th>Deposite</th><th>Expense</th><th>Advance/Due</th>";
+							// echo "<tr><td>".$sumstot."<td></tr>";
+							$seQ2= "SELECT * from total";
+							$result2 = $db->query($seQ2);
+							while(list($id,$name,$stot)=$result2->fetch_row()){
+
+							echo "<tr><td>".$name."</td><td>".$sumstot."</td><td>".($sumstot/3)."</td><td>".($stot-$sumstot/3)."<td>";
+						}
+						}
+
+
+
+						// $seQ= "select SUM(stot) from total";
+						// $result = $db->query($seQ);
+						// while(list($stot)=$result->fetch_row()){
+							// echo "<tr><td>".$id."</td><td>".$name."</td><td>".$stot."</td>";
+							// echo"<tr><td colspan='2'>Total</td><td>". $stot."</td></tr>";
+							// echo"<tr><td colspan='2'>Perhead Cost</td><td>". ($stot/3)."</td></tr>";
+						// }
 						echo "</table>";
+					}
+
+
+					 perHeadCost();
+					 deposite();
+
+
+
+
+
+						
+					
+
+						
 					?>
 
 				</div>

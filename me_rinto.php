@@ -36,8 +36,7 @@ include'common/config.php';
 						<li><a href="me_rinto.php">Rinto</a></li>
 						<li><a href="me_monirul.php">Monirul</a></li>
 						<li><a href="me_faruk.php">Faruk</a></li>
-						<li><a href="">menu 4</a></li>
-						
+						<li><a href="deposite.php">Deposit</a></li>
 					</ul>
 				</div>
 			</div>
@@ -59,8 +58,13 @@ include'common/config.php';
 						echo"<tr><td colspan='4'>Total</td><td>". $total."</td></tr>";
 					}
 
+						
+
+
 						echo "</table>";
 					?>
+
+					
 
 				</div>
 			</div>

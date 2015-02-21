@@ -41,8 +41,7 @@
 						<li><a href="me_rinto.php">Rinto</a></li>
 						<li><a href="me_monirul.php">Monirul</a></li>
 						<li><a href="me_faruk.php">Faruk</a></li>
-						<li><a href="">menu 4</a></li>
-						<li><a href="">menu 5</a></li>
+						<li><a href="deposite.php">Deposit</a></li>
 					</ul>
 				</div>
 			</div>
@@ -52,8 +51,13 @@
 					<form action="" class="form-horizontal" method="post">
 						<div class="form-group">
 							<label for="name" class="control-label col-xs-2">Name</label>
-							<div class="col-xs-10">
-								<input type="text" class="form-control" name="mmName" id="mmName" placeholder="Mess Member Name">
+							<div class="col-xs-10 bs-docs-example">
+								<!-- <input type="text" class="form-control" name="mmName" id="mmName" placeholder="Mess Member Name"> -->
+								<select class="selectpicker me-dropdown" name="mmName" id="mmName" data-style="btn-primary">
+									<option value="Rinto">Rinto</option>
+									<option value="Faruk">Faruk</option>
+									<option value="Monirul">Monirul</option>
+								</select>
 							</div>
 						</div>
 						<div class="form-group">
@@ -94,8 +98,8 @@
 			</div>
 		</div>
 	</div>
-	
 	<script src="js/bootstrap.js"></script>
 	<script src="js/npm.js"></script>
+	
 </body>
 </html>

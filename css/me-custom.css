@@ -1,3 +1,4 @@
+@import url("http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.5.4/bootstrap-select.min.css");
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
@@ -7,7 +8,7 @@
 
 body{
 	background: #742969;
-	color:#FFFFFF;
+	color:#fff;
 	font-size: 20px;
 }
 .me-header{
@@ -28,6 +29,11 @@ body{
 	margin: 100px 0 100px 0;
 	text-align: center;
 	font-family: Raleway;
+}
+
+.me-dropdown{
+	width: 702px;
+	color:#000;
 }
 
 
