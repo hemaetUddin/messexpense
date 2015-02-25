@@ -57,6 +57,15 @@ body{
 	color:#000;
 }
 
+
+.me-main-content{
+	min-height: 500px;
+	text-align: center;
+	padding-top: 10em;
+	font-family: lobster;
+	color:yellow;
+}
+
 .me-footer{
 	text-align: center;
 	height: 15em;
@@ -64,8 +73,25 @@ body{
 	color:#fff;
 	font-family: 'Lobster', cursive;
 	font-variant: initail;
+	position: relative;
+	top:100px;
 }
 
+.me-log-panel{
+	margin: 2em 20em 0 20em;
+	font-family: raleway;
+	font-size: 14px;
+	color:#000;
+	background: #efefef;
+	padding: 3em 2em 2em 2em;
+	border-radius: 10px;
+
+}
+
+.me-required{
+	font-size: 2em;
+	color:red;
+}
 
 
 
