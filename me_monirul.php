@@ -10,22 +10,36 @@ include'common/config.php';
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/me-custom.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/animate.min.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/custom.js"></script>
+	<script src="js/wow.min.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+	<script>
+ 		new WOW().init();
+	</script>
 </head>
 <body>
 	<div class="me-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<h1>Our Mess Expenses</h1>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<p class="me-header-text wow bounceInDown">Our Mess Expenses</p>
+						<p>
+							<ul class="mMembers">
+								<li class="wow slideInLeft"><a href="me_rinto.php">Rinto |</a></li>
+								<li class="wow bounceInUp"><a href="me_faruk.php">Faruk |</a></li>
+								<li class="wow slideInRight" data-wow-offset="10"><a href="me_monirul.php">Monirul</a></li>
+							</ul>
+						</p>
+						<a href="#destination"></a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-3">

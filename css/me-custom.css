@@ -46,11 +46,28 @@ body{
 
 }
 
+.me_left{
+	border-right: 2px solid #fff;
+	background: green !important;
+}
+
 .me-right, .me-left{
 	margin: 100px 0 100px 0;
 	text-align: center;
 	font-family: Raleway;
 }
+
+
+.me-left li{
+	text-align: left;
+	list-style:none; 
+}
+.me-left ul>li>a{
+	color:#fff;
+	text-decoration: none;
+
+}
+
 
 .me-dropdown{
 	width: 702px;

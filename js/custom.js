@@ -15,8 +15,12 @@ $(document).ready(function(){
 				meSubmit:meSubmit
 			},
 			function(result){
-				// alert(mepPrice);
 				alert(result);
+				$('#mmName').val('');
+				$('#meDate').val('');
+				$('#mepName').val('');
+				$('#mepPrice').val('');
+
 
 			})
 		}));

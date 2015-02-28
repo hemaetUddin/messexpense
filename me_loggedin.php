@@ -13,9 +13,10 @@ $result = $db->query($myquery);
 $num_rows = $result->num_rows;
 if($num_rows!=0){
 	echo "You have successfully loggedin";
+	header('location: me_home.php');
 	// exit();
 }else{
-	header('Location: login.php');
+	header('Location: index.php');
 	echo "Invalid Credentials";
 }
 
